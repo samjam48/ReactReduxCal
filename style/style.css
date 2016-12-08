@@ -1,0 +1,32 @@
+.colHeader:first-child {
+    background-color: #fff !important;
+    border-color: #fff !important;
+}
+
+pre {
+    margin-bottom: 0 !important;
+}
+
+.colHeader {
+    width:10% !important;
+    height: 20px;
+    background-color: #91C4F2;
+}
+
+td:first-child {
+    width:10% !important;
+    font-size: 10px;
+    /*text-align: right;*/
+}
+
+
+
+
+/*
+element.style {
+
+    min-width: 154px;
+    background-color: white;
+    border-color: white;
+}*/
+

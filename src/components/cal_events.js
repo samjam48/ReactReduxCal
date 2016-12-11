@@ -6,8 +6,8 @@ import { ConvertDate } from './date_handlers'
 
 export const CalEvents = (data) => {
     return data.map((event) => {
-        event.start = ConvertDate(event.start)
-        event.end = ConvertDate(event.end)
+        event.begin = ConvertDate(event.start)
+        event.final = ConvertDate(event.end)
         return event
     })
 }

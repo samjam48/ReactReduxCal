@@ -28,12 +28,15 @@ export function thisWeek() {
     }
 }
 
-export function changeWeek(newWeek) {
+export function changeWeek(newWeek, currDate, cb) {
+    console.log("changedate called")
+    console.log(currDate)
     let newDate = ChangeDate(currDate, newWeek)
     let start   = newDate.substring(0, 10)
+    console.log("changedate called 2nd time")
     let end     = ChangeDate(newDate, 7).substring(0, 10)
     week        = `${start}T00%3A00%3A00Z&before=${end}T00%3A00%3A00Z`
-
+    cb()
     return {
         type: CHANGE_WEEK,
         payload: newDate
@@ -44,8 +47,8 @@ export function changeWeek(newWeek) {
 
 export function fetchData() {
     const request = axios.get(ROOT_URL + week);
-    // console.log('request data')
-    // console.log(request)
+    console.log('request data')
+    console.log(request)
 
     return {
         type: 'FETCH_DATA',

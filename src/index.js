@@ -12,6 +12,8 @@ var defaultState = { week: 'Loading...', data: [
     {
         "id": 1,
         "start": "2016-12-07T03:00:00Z",
+        "begin": '',
+        "final":  '',
         "end": "2016-12-07T06:30:00Z",
         "label": "Loading",
         "category": "cyan"
@@ -20,6 +22,8 @@ var defaultState = { week: 'Loading...', data: [
         "id": 2,
         "start": "2016-12-08T03:00:00Z",
         "end": "2016-12-08T04:00:00Z",
+        "begin": '',
+        "final":  '',
         "label": "Loading",
         "category": "cyan"
     },
@@ -27,6 +31,8 @@ var defaultState = { week: 'Loading...', data: [
         "id": 3,
         "start": "2016-12-08T05:00:00Z",
         "end": "2016-12-08T06:30:00Z",
+        "begin": '',
+        "final":  '',
         "label": "Loading",
         "category": "cyan"
     },
@@ -34,6 +40,8 @@ var defaultState = { week: 'Loading...', data: [
         "id": 4,
         "start": "2016-12-09T03:00:00Z",
         "end": "2016-12-09T06:30:00Z",
+        "begin": '',
+        "final":  '',
         "label": "Loading",
         "category": "cyan"
     }

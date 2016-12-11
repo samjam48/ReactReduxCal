@@ -6,37 +6,31 @@ import { WeekStartDate,  ChangeDate } from '../components/date_handlers'
 
 
 
-// on buttonClick. change start date +/- a week
-// update current date state
-
-
 const ROOT_URL = 'https://assessments.bzzhr.net/calendar/calendar/?overlaps=false&since='
 const currDate  = WeekStartDate()
 let week
 
-export function thisWeek() {
+export function thisWeek() { // find current date and then set the inital APi pull to this week
+
     let currDate = WeekStartDate()
     let start    = currDate.substring(0, 10)
     let end      = ChangeDate(currDate, 7).substring(0, 10)
     week         = `${start}T00%3A00%3A00Z&before=${end}T00%3A00%3A00Z`
-    // console.log('++++++++++++++++++++++')
-    // console.log('currDate')
-    // console.log(currDate)
+
     return {
         type: 'THIS_WEEK',
         payload: currDate
     }
 }
 
-export function changeWeek(newWeek, currDate, cb) {
-    console.log("changedate called")
-    console.log(currDate)
+export function changeWeek(newWeek, currDate, cb) {  // change week forrwards/backwards and change API pull accordingly
+
     let newDate = ChangeDate(currDate, newWeek)
     let start   = newDate.substring(0, 10)
-    console.log("changedate called 2nd time")
     let end     = ChangeDate(newDate, 7).substring(0, 10)
     week        = `${start}T00%3A00%3A00Z&before=${end}T00%3A00%3A00Z`
     cb()
+
     return {
         type: CHANGE_WEEK,
         payload: newDate
@@ -45,11 +39,8 @@ export function changeWeek(newWeek, currDate, cb) {
 
 
 
-export function fetchData() {
+export function fetchData() {   // get event data from buxxhire API
     const request = axios.get(ROOT_URL + week);
-    console.log('request data')
-    console.log(request)
-
     return {
         type: 'FETCH_DATA',
         payload: request

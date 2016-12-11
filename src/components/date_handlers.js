@@ -26,15 +26,13 @@ export const WeekStartDate = () =>{
 }
 
 
-export const ConvertDate = (date) => {
-    date = new Date(date)
-    return {
-      date: date,
-      hours: date.getHours(),
-      dayName: date.getDayOfWeek(),
-      dayNum: date.getDayNum(),
-      day: date.getDate(),
-      month: date.getMonth(),
-      year: date.getYear()
-    }
+
+
+export const getMonthYear = (date) => {
+    // date = new Date(date)
+    // return `${date.getMonth()}, ${date.getYear()}`
+    var arr = date.split("-");
+    var months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+    return months[arr[1] - 1] + ', ' + arr[0]
+
 }

@@ -1,27 +1,40 @@
 import React from 'react'
 import { CalEvents } from './cal_events';
+import { ChangeDate } from './date_handlers'
 
-// don't change formatting of 'days' object or table headers will screw up!
+
+export function CalHeader(date){
+    let dayNum = []
+    for(let i=0; i<7; i++){
+        let day = ChangeDate(date, i)
+        day = new Date(day)
+        dayNum.push( day.getDate() )
+    }
+
+// Important
+// don't change formatting of 'days' object INCLUDING INDENTATION
+// (or table headers will screw up!)
 let days = {
 1 : `Mon
-${1}`,
+${dayNum[0]}`,
 2 : `Tue
-${2}`,
+${dayNum[1]}`,
 3 : `Wed
-${3}`,
+${dayNum[2]}`,
 4 : `Thu
-${4}`,
+${dayNum[3]}`,
 5 : `Fri
-${5}`,
+${dayNum[4]}`,
 6 : `Sat
-${6}`,
+${dayNum[5]}`,
 7 : `Sun
-${7}`
+${dayNum[6]}`
 }
 
-export const CalHeader = Object.keys(days).map( (day) => { 
-                                                        return(
-                                                            <TableHeaderColumn className="colHeader" headerAlign='center' key={day} dataField={day} width='10%' > 
-                                                                <pre>{days[day]}</pre> 
-                                                            </TableHeaderColumn> 
-                                                        )})
+
+    return Object.keys(days).map( (day) => {return(
+                                                <TableHeaderColumn className="colHeader" headerAlign='center' key={day} dataField={day} width='10%' > 
+                                                    <pre>{days[day]}</pre> 
+                                                </TableHeaderColumn> 
+                                            )})
+} 

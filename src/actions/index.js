@@ -1,22 +1,32 @@
 import axios from 'axios';
-
-const ROOT_URL = 'https://assessments.bzzhr.net/calendar/calendar/?overlaps=&since=2016-12-05T04%3A30%3A00Z&before=2016-12-11T15%3A00%3A00Z'
 export const FETCH_DATA = 'FETCH_DATA';
+import { WeekStartDate,  ChangeDate } from '../components/date_handlers'
+
+
+
+
+
+
+const ROOT_URL = 'https://assessments.bzzhr.net/calendar/calendar/?overlaps=false&since='
+let current_date  = WeekStartDate()
+let start = current_date.substring(0, 10)
+let endSt = ChangeDate(current_date, 7)
+let end   = endSt.substring(0, 10)
+let week  = `${start}T00%3A00%3A00Z&before=${end}T00%3A00%3A00Z`
+
+// on buttonClick. change start date +/- a week
+// update current date state
+
 
 export function fetchData() {
-    const request = axios.get(ROOT_URL);
+
+
+    const request = axios.get(ROOT_URL + week);
     console.log('request data')
     console.log(request)
-
-    // console.log('request: ', request)
 
     return {
         type: 'FETCH_DATA',
         payload: request
     };
 }
-
-
-// add week parameter to fetch data function
-
-// format for specifying date area____    GET /calendar/?overlaps=&since=2016-12-05T04%3A30%3A00Z&before=2016-12-11T15%3A00%3A00Z

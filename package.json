@@ -28,15 +28,20 @@
   "dependencies": {
     "axios": "^0.15.3",
     "babel-preset-stage-1": "^6.1.18",
+    "fixed-data-table": "^0.6.3",
     "lodash": "^3.10.1",
     "moment": "^2.17.1",
-    "react": "^0.14.3",
+    "react": "^0.14.8",
+    "react-addons-shallow-compare": "^15.4.1",
     "react-bootstrap": "^0.30.7",
     "react-bootstrap-calendar": "0.0.3",
     "react-bootstrap-table": "^2.6.0",
+    "react-datagrid": "^2.1.2",
     "react-dom": "^0.14.3",
+    "react-infinite-grid": "^0.4.0",
     "react-redux": "^4.0.0",
     "react-router": "^2.0.1",
+    "react-virtualized": "^8.7.1",
     "redux": "^3.0.4",
     "redux-promise": "^0.5.3"
   }

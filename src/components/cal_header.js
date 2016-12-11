@@ -1,20 +1,21 @@
 import React from 'react'
+import { CalEvents } from './cal_events';
 
-
+// don't change formatting of 'days' object or table headers will screw up!
 let days = {
-    mon  : `Mon
+1 : `Mon
 ${1}`,
-    tue  : `Tue
+2 : `Tue
 ${2}`,
-    wed  : `Wed
+3 : `Wed
 ${3}`,
-    thu  : `Thu
+4 : `Thu
 ${4}`,
-    fri  : `Fri
+5 : `Fri
 ${5}`,
-    sat  : `Sat
+6 : `Sat
 ${6}`,
-    sun  : `Sun
+7 : `Sun
 ${7}`
 }
 

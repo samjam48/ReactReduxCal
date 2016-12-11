@@ -1,32 +1,45 @@
-.colHeader:first-child {
-    background-color: #fff !important;
-    border-color: #fff !important;
+h1 {
+    text-align: center;
+    margin: 20px !important;;
 }
 
 pre {
     margin-bottom: 0 !important;
 }
 
-.colHeader {
-    width:10% !important;
-    height: 20px;
-    background-color: #91C4F2;
+.colHeader:first-child {
+    /*border-color: #fff !important;*/
+    /*background-color: #9D79BC !important;*/
 }
 
-td:first-child {
-    width:10% !important;
-    font-size: 10px;
-    /*text-align: right;*/
+.colHeader {
+    width: 10%;
+    height: 20px;
+    /*background-color: #8CA0D7;*/
 }
+
+.calTable {
+    table-layout:fixed !important;
+}
+
+
+.calTable, td {
+    overflow: hidden !important;
+    padding: 4px !important;
+    font-size: 12px;
+    text-align: center !important;
+} 
+
+
 
 
 
 
 /*
-element.style {
-
-    min-width: 154px;
-    background-color: white;
-    border-color: white;
-}*/
-
+Potential color pallete
+#91C4F2 = light blue
+#8CA0D7 = blue
+#9D79BC = lilac
+#A14DA0 = light purple
+#7E1F86 = max purple
+*/

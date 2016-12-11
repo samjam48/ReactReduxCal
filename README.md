@@ -19,7 +19,12 @@ If you have time, feel free to improve the calendar and add more features :
 
 
 ## To do
- [ ] Basic Cal format
- [ ] Convert data to work with calendar
- [ ] color displaying
- [ ] week navigation
+ [ ] Basic Cal template
+ [ ] Api call
+  	[ ] set new state with returned data
+	[ ] Call data week by week
+ [ ] Show data
+	[ ] Convert time data
+	[ ] add into calender display
+ 	[ ] show event color
+ [ ] week by week navigation

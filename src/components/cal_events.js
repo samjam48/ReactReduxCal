@@ -4,13 +4,10 @@ import { ConvertDate } from './date_handlers'
 
 
 
-
-const CalEvents = (data) => {
+export const CalEvents = (data) => {
     return data.map((event) => {
         event.start = ConvertDate(event.start)
         event.end = ConvertDate(event.end)
         return event
     })
 }
-
-export {CalEvents}

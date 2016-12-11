@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import DataReducer from './reducer_data';
+import DataReducer from './data_reducer';
+import WeekReducer from './week_reducer';
 
 const rootReducer = combineReducers({
-  data: DataReducer
+  data: DataReducer,
+  week: WeekReducer
 });
 
 export default rootReducer;

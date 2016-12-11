@@ -4,7 +4,7 @@ Date.prototype.getDayOfWeek = function(){
     return ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][ this.getDay() ];
 };
 
-Date.prototype.getDayNum = function(){
+Date.prototype.getDayNum = function(){ // Add method to Date so sunday equates to a 7 not a 0. Now weeks start on a Monday
     let day = this.getDay()
     if(day == 0) day = 7
     return day;
@@ -21,7 +21,6 @@ export const ChangeDate = (date, change) => {
 
 export const WeekStartDate = () =>{
     var currDate = new Date;
-    // console.log(curr)
     var firstDayOfWeek = new Date(currDate.setDate(currDate.getDate() - currDate.getDayNum()+1));
     return firstDayOfWeek.toISOString()
 }
@@ -39,5 +38,3 @@ export const ConvertDate = (date) => {
       year: date.getYear()
     }
 }
-
-// export {ConvertDate, WeekStartDate}

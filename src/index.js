@@ -6,17 +6,38 @@ import { createStore, applyMiddleware } from 'redux';
 
 import App from './components/app';
 import reducers from './reducers';
-import { fetchData } from './actions/index';
+import { fetchData, thisWeek } from './actions/index';
 
-var defaultState = { data: [
+var defaultState = { week: 'Loading...', data: [
     {
-        "id": 10,
-        "start": "2016-12-10T17:30:00Z",
-        "end": "2016-12-10T20:30:00Z",
-        "label": "Call qif",
+        "id": 1,
+        "start": "2016-12-07T03:00:00Z",
+        "end": "2016-12-07T06:30:00Z",
+        "label": "Loading",
         "category": "cyan"
-    }]
-        }
+    },
+    {
+        "id": 2,
+        "start": "2016-12-08T03:00:00Z",
+        "end": "2016-12-08T04:00:00Z",
+        "label": "Loading",
+        "category": "cyan"
+    },
+    {
+        "id": 3,
+        "start": "2016-12-08T05:00:00Z",
+        "end": "2016-12-08T06:30:00Z",
+        "label": "Loading",
+        "category": "cyan"
+    },
+    {
+        "id": 4,
+        "start": "2016-12-09T03:00:00Z",
+        "end": "2016-12-09T06:30:00Z",
+        "label": "Loading",
+        "category": "cyan"
+    }
+]}
 
 const createStoreWithMiddleware = applyMiddleware( promise )(createStore);
 
@@ -24,6 +45,7 @@ const createStoreWithMiddleware = applyMiddleware( promise )(createStore);
 
 const store = createStoreWithMiddleware(reducers, defaultState)
 
+store.dispatch( thisWeek() )
 store.dispatch( fetchData() )
 
 ReactDOM.render(

@@ -15,6 +15,7 @@ function rowBuilder(hour) {
     }
 }
 
+const rowMap = times.map((hour) => rowBuilder(hour) )
 
-    
-export const CalRows = times.map((hour) => rowBuilder(hour) )
+    // deep clone array so that each page change all cell contents are refreshed.
+export const CalRows = () => JSON.parse(JSON.stringify( rowMap ) )

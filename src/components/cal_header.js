@@ -21,7 +21,7 @@ ${7}`
 
 export const CalHeader = Object.keys(days).map( (day) => { 
                                                         return(
-                                                            <TableHeaderColumn className="colHeader" headerAlign='center' dataField={day} width='10%' > 
+                                                            <TableHeaderColumn className="colHeader" headerAlign='center' key={day} dataField={day} width='10%' > 
                                                                 <pre>{days[day]}</pre> 
                                                             </TableHeaderColumn> 
                                                         )})

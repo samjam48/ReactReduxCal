@@ -1,4 +1,4 @@
-h1 {
+h1, h2 {
     text-align: center;
     margin: 20px !important;;
 }
@@ -30,7 +30,13 @@ pre {
     text-align: center !important;
 } 
 
+.btn {
+    margin: 11px;
+}
 
+#nextWeek {
+    float: right;
+}
 
 
 
